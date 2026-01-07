@@ -145,7 +145,7 @@ nav a.active {
   overflow: hidden;
 }
 
-/* Ripple effect */
+/* Ripple */
 .ripple {
   position: absolute;
   width: 20px;
@@ -178,24 +178,89 @@ section h2 {
 }
 
 /* =====================
-   SKILLS
+   SKILLS GRID WITH LOGOS
 ===================== */
-.skills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 22px;
 }
 
-.skills span {
+/* clickable wrapper */
+.skill-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* skill card */
+.skill-card {
+  position: relative;
   background: var(--card);
-  padding: 10px 15px;
-  border-radius: 20px;
-  box-shadow: 0 5px 15px var(--shadow);
-  font-size: 14px;
+  padding: 22px 16px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 12px 30px var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 45px var(--shadow);
+}
+
+.skill-card img {
+  width: 44px;
+  height: 44px;
+  margin-bottom: 10px;
+}
+
+.skill-card span {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+/* Skill Level Bar */
+.level {
+  width: 100%;
+  height: 6px;
+  background: #e5e7eb;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.level span {
+  display: block;
+  height: 100%;
+  background: var(--primary);
+  border-radius: 10px;
+}
+
+/* Tooltip */
+.skill-card::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: -38px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--primary);
+  color: #ffffff;
+  padding: 6px 10px;
+  font-size: 12px;
+  border-radius: 6px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s;
+}
+
+.skill-card:hover::after {
+  opacity: 1;
+  bottom: -30px;
 }
 
 /* =====================
-   PROJECTS GRID
+   PROJECTS
 ===================== */
 .projects {
   display: grid;
@@ -211,8 +276,8 @@ section h2 {
   transition: transform 0.3s ease;
 }
 
-.project h3 {
-  margin-bottom: 10px;
+.project:hover {
+  transform: translateY(-8px);
 }
 
 .project p {
