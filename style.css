@@ -300,15 +300,64 @@ section h2 {
 }
 
 /* =====================
-   FOOTER
+   FOOTER (ADVANCED)
 ===================== */
-footer {
-  margin-top: 80px;
-  padding: 30px;
+.footer {
   background: var(--card);
+  padding: 50px 20px 30px;
+  margin-top: 80px;
+  box-shadow: 0 -5px 20px var(--shadow);
+}
+
+.footer-content {
+  max-width: 1100px;
+  margin: auto;
   text-align: center;
+}
+
+.footer h3 {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.footer p {
   color: var(--sub);
-  box-shadow: 0 -5px 15px var(--shadow);
+  font-size: 15px;
+}
+
+.social-links {
+  margin: 25px 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-links a {
+  width: 45px;
+  height: 45px;
+  background: var(--bg);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 25px var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-links a:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 35px var(--shadow);
+}
+
+.social-links img {
+  width: 22px;
+  height: 22px;
+}
+
+.footer-bottom {
+  margin-top: 25px;
+  font-size: 14px;
+  color: var(--sub);
 }
 
 /* =====================
@@ -338,5 +387,8 @@ footer {
 
   .hero img {
     margin-top: 25px;
+  }
+  .footer h3 {
+    font-size: 20px;
   }
 }
